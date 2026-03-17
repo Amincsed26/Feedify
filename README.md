@@ -2,7 +2,7 @@
 
 > Your Friendly Neighborhood Social-Media Platform
 
-Feedify is a full-stack social media web application built with a **Java Spring Boot** backend and a **JavaScript** frontend. It supports user interactions typical of a modern social platform, backed by a relational MySQL database with auto-managed schema via Spring Boot.
+Feedify is a full-stack social media web application built with a **Java Spring Boot** backend and a **React** frontend. It supports user interactions typical of a modern social platform, backed by a relational MySQL database with auto-managed schema via Spring Boot.
 
 ---
 
@@ -11,7 +11,7 @@ Feedify is a full-stack social media web application built with a **Java Spring 
 | Layer    | Technology              |
 |----------|-------------------------|
 | Backend  | Java 23, Spring Boot, Maven |
-| Frontend | JavaScript, CSS, HTML (Vite/npm) |
+| Frontend | React, JavaScript, CSS (Vite/npm) |
 | Database | MySQL                   |
 
 ---
@@ -21,7 +21,7 @@ Feedify is a full-stack social media web application built with a **Java Spring 
 ```
 Feedify/
 ├── backend/        # Spring Boot application
-├── frontend/       # JS frontend (Vite)
+├── frontend/       # React frontend (Vite)
 ├── .github/        # CI/CD workflows
 ├── package.json
 └── README.md
@@ -57,11 +57,8 @@ Open your MySQL shell and run:
 
 ```sql
 CREATE DATABASE feedify;
-
 CREATE USER 'feedify_admin'@'localhost' IDENTIFIED BY 'Admin@123';
-
 GRANT ALL PRIVILEGES ON feedify.* TO 'feedify_admin'@'localhost';
-
 FLUSH PRIVILEGES;
 ```
 
