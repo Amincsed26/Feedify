@@ -1,6 +1,6 @@
 # 🌐 Feedify
 
-A social media backend that connects users through posts, follows, personalized feeds, and community moderation.
+A social media platform that connects users through posts, follows, personalized feeds, and community moderation.
 
 ## ✨ Features
 
