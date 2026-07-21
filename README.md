@@ -12,13 +12,19 @@ A social media platform that connects users through posts, follows, personalized
 
 ---
 
-### 👤 User Features
+### 👤 User Features & Settings
 - Update username, password, and profile picture
 - Manage personal interests
 - View account settings and info
 - Follow / unfollow other users
 - View followers, following, and their counts
 - Check if a user is followed
+
+---
+
+### 🔍 Search & Discovery
+- Search for users by username (case-insensitive)
+- Search for users by email (case-insensitive)
 
 ---
 
@@ -29,10 +35,12 @@ A social media platform that connects users through posts, follows, personalized
 
 ---
 
-### 📝 Posts
+### 📝 Posts & Reposts
 - Create posts with optional image upload
 - Retrieve post types
 - Retrieve a single post by ID
+- Repost existing posts to your profile
+- View a list of all users who reposted a specific post
 
 ---
 
@@ -96,6 +104,14 @@ A social media platform that connects users through posts, follows, personalized
 
 ---
 
+### Search
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| GET | `/search/username/{username}` | Search users by username |
+| GET | `/search/email/{email}` | Search users by email |
+
+---
+
 ### Feed
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -111,6 +127,14 @@ A social media platform that connects users through posts, follows, personalized
 | POST | `/post/createPost` | Create a new post (with optional image) |
 | GET | `/post/getTypes` | Retrieve all post types |
 | GET | `/post/{postID}` | Retrieve a post by ID |
+
+---
+
+### Reposts
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/api/reposts/repost` | Repost a post |
+| POST | `/api/reposts/users` | Retrieve users who reposted a post |
 
 ---
 
@@ -130,25 +154,26 @@ A social media platform that connects users through posts, follows, personalized
 ## 🛠️ Tech Stack
 - Java
 - Spring Boot
-- Spring MVC
-- Spring Data JPA
 - RESTful APIs
+- React.js
 - Multipart file upload (profile pictures & post images)
 - Gson
 
 ---
 
-## 🔒 Security
+## 🔒 Security & Architecture
 - Role-based access (User, Admin)
 - Custom exception handling for auth, follow, report, and OTP flows
 - Google OAuth integration
+- Strategy Design Pattern implemented for scalable user search
 
 ---
 
 ## 📈 Core Functionalities
 - User authentication (standard + Google)
 - Password recovery via OTP
-- Post creation and retrieval
+- User discovery via username and email search
+- Post creation, retrieval, and reposting capabilities
 - Follow / unfollow system
 - Personalized feeds (profile, following, topics)
 - Content moderation via user & post reporting
